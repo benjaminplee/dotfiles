@@ -16,7 +16,7 @@ function make_old()
 
 function rm_link()
 {
-  rm $1
+  rm -f $1
   ln -s $2 $1 || die "Could not symlink: ${1}"
 }
 
