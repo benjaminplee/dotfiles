@@ -1,9 +1,11 @@
 color tango2
 
-:map ,t :up \| :!./test<cr>
+:map <leader>t :up \| :!./test<cr>
 
 :inoremap jk <esc>
 :inoremap kj <esc>
 :imap <esc> STOPIT
 
 set relativenumber
+
+set nobackup
