@@ -21,3 +21,9 @@ git clone https://github.com/carlhuda/janus.git $HOME/.vim \
 # Run rake inside .vim
 cd $HOME/.vim || die "Could not go into the ${HOME}/.vim"
 rake || die "Rake failed."
+
+rm $HOME/.vimrc.before
+ln -s $PWD/.vimrc.before $HOME/.vimrc.before
+
+rm $HOME/.vimrc.after
+ln -s $PWD/.vimrc.after $HOME/.vimrc.after
