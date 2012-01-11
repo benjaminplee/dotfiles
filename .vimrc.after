@@ -1,0 +1,6 @@
+color tango2
+
+:map ,t :up \| :!./test<cr>
+
+:imap jk <esc>
+:imap kj <esc>
