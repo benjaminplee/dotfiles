@@ -20,3 +20,5 @@ function rm_link()
   ln -s $2 $1 || die "Could not symlink: ${1}"
 }
 
+# prompt
+# read -p "Enter:" var
