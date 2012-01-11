@@ -1,0 +1,15 @@
+[alias]
+	st = status
+	co = checkout
+	ci = commit
+	lg = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+	hist = log --graph --pretty=format:'%Cred%h%Creset %Cblue%ad%Creset - %s%C(yellow)%d%Creset %C(bold blue)<%an>%Creset' --abbrev-commit --date=short
+	allhist = log --graph --pretty=format:'%Cred%h%Creset %Cblue%ad%Creset - %s%C(yellow)%d%Creset %C(bold blue)<%an>%Creset' --abbrev-commit --date=short --all
+  wd = diff --word-diff=color
+[color]
+	ui = true
+[user]
+	name = Benjamin P Lee
+	email = yardspoon@gmail.com
+[core]
+	autocrlf = input
