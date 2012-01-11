@@ -2,5 +2,8 @@ color tango2
 
 :map ,t :up \| :!./test<cr>
 
-:imap jk <esc>
-:imap kj <esc>
+:inoremap jk <esc>
+:inoremap kj <esc>
+:imap <esc> STOPIT
+
+set relativenumber
