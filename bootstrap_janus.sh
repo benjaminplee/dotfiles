@@ -8,8 +8,9 @@ git clone https://github.com/carlhuda/janus.git $HOME/.vim \
 cd $HOME/.vim || die "Could not go into the ${HOME}/.vim"
 rake || die "Rake failed."
 
-make_old $HOME/.vimrc.before
-rm_link $PWD/.vimrc.before $HOME/.vimrc.before
-
-make_old $HOME/.vimrc.after
-rm_link $PWD/.vimrc.after $HOME/.vimrc.after
+for i in .vimrc.before .vimrc.after .gvimrc.before .gvimrc.after ; do
+  if [[ ( -e $i ) || ( -h $i ) ]]; then
+    make_old $HOME/$i
+    rm_link $PWD/$i $HOME/$i
+  fi
+done
