@@ -1,6 +1,6 @@
-color tango2
+color desertEx
 
-:map <leader>t :up \| :!./test<cr>
+:map <leader>t :up \| :!./test.sh<cr>
 
 :inoremap jk <esc>
 :inoremap kj <esc>
