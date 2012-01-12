@@ -4,6 +4,7 @@ export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 alias ll="pwd; ls -lhaG"
 alias lll="ll | less"
 
+source ~/.git_bash_prompt
 export GIT_EDITOR="gvim -f"
 
 alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
