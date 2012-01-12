@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # adapted from https://raw.github.com/carlhuda/janus/master/bootstrap.sh
 
 make_old $HOME/.vim $HOME/.vimrc $HOME/.gvimrc

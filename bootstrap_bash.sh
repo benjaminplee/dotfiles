@@ -1,3 +1,5 @@
+#!/bin/bash
+
 source bootstrap_include.sh
 
 make_old $HOME/.bashrc
