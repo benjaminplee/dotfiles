@@ -13,3 +13,4 @@
 	email = yardspoon@gmail.com
 [core]
 	autocrlf = input
+	editor = gvim -f
