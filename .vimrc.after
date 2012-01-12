@@ -9,3 +9,6 @@ color tango2
 set relativenumber
 
 set nobackup
+
+set guifont=Consolas:h16
+set guioptions-=T
