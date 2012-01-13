@@ -29,6 +29,6 @@ Else {
 	}
 }
 
-"Creating link to new profile"
+"Creating link to new powershell profile"
 
 cmd /c mklink $profile "${pwd}\Microsoft.PowerShell_profile.ps1"
