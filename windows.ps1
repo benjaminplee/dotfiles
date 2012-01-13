@@ -52,3 +52,35 @@ link $profile $pwd\Microsoft.PowerShell_profile.ps1
 
 make_old $home\.gitconfig
 link $home\.gitconfig $pwd\.gitconfig
+
+########## VIM (Janus) ###########
+"Bootstrapping VIM (Janus)"
+"------------------------"
+
+#make_old $home\.vimrc
+#make_old %home\.gvimrc
+#make_old $home\_vimrc
+#make_old %home\_gvimrc
+#make_old $home\.vimrc
+#make_old %home\.gvimrc
+
+If (Test-Path $home\vimfiles) {
+	pushd
+	cd $home\vimfiles
+	git pull origin
+	popd
+}
+Else {
+	git clone https://github.com/carlhuda/janus.git $home\vimfiles
+}
+
+pushd
+cd $home\vimfiles
+rake
+popd
+
+link $home\_vimrc $home\vimfiles\.vimrc
+link $home\.vimrc.before $pwd\.vimrc.before
+link $home\.vimrc.after $pwd\.vimrc.after
+link $home\.gvimrc.before $pwd\.gvimrc.before
+link $home\.gvimrc.after $pwd\.gvimrc.after
