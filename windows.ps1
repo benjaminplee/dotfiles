@@ -20,6 +20,19 @@ function Is_Link([string]$path) {
   return [bool]($file.Attributes -band [IO.FileAttributes]::ReparsePoint)
 }
 
+function link($target, $local_file) {
+	echo "====="
+	echo $target
+	echo "====="
+	echo $local_file
+	echo "====="
+	echo "Creating link to new " $local_file
+	echo "====="
+	echo $local_file
+	echo "====="
+	#echo cmd /c mklink $target ${pwd}\${local_file}
+}
+
 "Bootstrapping Dot Files in Windows"
 "----------------------------------"
 
@@ -37,11 +50,10 @@ Else {
 	make_old($profile)
 }
 
-"Creating link to new powershell profile"
-cmd /c mklink $profile "${pwd}\Microsoft.PowerShell_profile.ps1"
+link($profile, "Microsoft.PowerShell_profile.ps1")
 
 ########## .gitconfig ###########
 "Bootstrapping .gitconfig"
 "------------------------"
 
-
+make_old("~\.gitconfig")
