@@ -1,5 +1,3 @@
-# goes in $HOME\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1
-
 function rmrf {
     rm -Recurse -Force $Args
 }
@@ -18,3 +16,5 @@ function envs {Get-ChildItem Env:}
 function insanity {
   do { iex $Args } while ($?)
 }
+
+cd $home
