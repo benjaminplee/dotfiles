@@ -4,6 +4,10 @@
 "Bootstrapping Dot Files in Windows"
 "----------------------------------"
 
+########## powershell profile ###########
+"Bootstrapping powershell profile"
+"--------------------------------"
+
 function Is_Link([string]$path) {
   $file = Get-Item $path -Force -ea 0
   return [bool]($file.Attributes -band [IO.FileAttributes]::ReparsePoint)
@@ -30,5 +34,10 @@ Else {
 }
 
 "Creating link to new powershell profile"
-
 cmd /c mklink $profile "${pwd}\Microsoft.PowerShell_profile.ps1"
+
+########## .gitconfig ###########
+"Bootstrapping .gitconfig"
+"------------------------"
+
+
