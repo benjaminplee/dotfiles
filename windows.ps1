@@ -3,7 +3,7 @@
 
 function make_old([string]$target) {
 	If (Test-Path $target) {
-			If (Is_Link($target)) {
+			If (Is_Link $target) {
 				"${target} file already present as link; removing"
 				del $target
 			}
@@ -20,17 +20,11 @@ function Is_Link([string]$path) {
   return [bool]($file.Attributes -band [IO.FileAttributes]::ReparsePoint)
 }
 
-function link($target, $local_file) {
-	echo "====="
-	echo $target
-	echo "====="
-	echo $local_file
-	echo "====="
-	echo "Creating link to new " $local_file
-	echo "====="
-	echo $local_file
-	echo "====="
-	#echo cmd /c mklink $target ${pwd}\${local_file}
+function link($target, $source) {
+	Write-Host "Creating link to new " $source
+echo $target
+echo $source
+	cmd /c mklink $target $source
 }
 
 "Bootstrapping Dot Files in Windows"
@@ -47,13 +41,14 @@ If ( !( Test-Path $profile_folder ) ) {
     mkdir -p $profile_folder
 }
 Else {
-	make_old($profile)
+	make_old $profile
 }
 
-link($profile, "Microsoft.PowerShell_profile.ps1")
+link $profile $pwd\Microsoft.PowerShell_profile.ps1
 
 ########## .gitconfig ###########
 "Bootstrapping .gitconfig"
 "------------------------"
 
-make_old("~\.gitconfig")
+make_old $home\.gitconfig
+link $home\.gitconfig $pwd\.gitconfig
